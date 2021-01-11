@@ -1,0 +1,26 @@
+@mixin svg(
+  $color: #000,
+  $width: 30px,
+  $height: 30px,
+  $margin: '',
+  $margin-right: 0,
+  $margin-bottom: 0,
+  $margin-left: 0,
+  $margin-top: 0
+) {
+  & svg {
+    width: $width;
+    height: $height;
+    margin-right: $margin-right;
+    margin-bottom: $margin-bottom;
+    margin-left: $margin-left;
+    margin-top: $margin-top;
+    margin: $margin;
+    & path,
+    circle,
+    rect,
+    polygon {
+      fill: $color;
+    }
+  }
+}
