@@ -1,16 +1,16 @@
 header {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 800;
 
   & .header__top-bar {
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid #efefef;
-
-    padding: 10px 126px;
+    padding: 10px 10rem;
 
     & .header__contact {
       display: flex;
+      font-size: 1.3rem;
 
       &-item {
         margin: 0 20px;
@@ -26,6 +26,7 @@ header {
       align-items: center;
       & b {
         color: #52bf4d;
+        font-size: 1.2rem;
       }
       & svg {
         margin-right: 5px;
@@ -38,76 +39,121 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    padding: 32px 126px;
+    padding: 2.5rem 12.6rem;
 
     &__logo img {
-      height: 64px;
+      width: 23rem;
       margin: 0 56px 0 0;
     }
 
     &__search {
       display: flex;
       flex: 1;
-      max-width: 912px;
+      max-width: 91.2rem;
+      position: relative;
+
       & svg {
-        position: relative;
-        width: 20px;
-        left: -50px;
-        top: 5px;
+        position: absolute;
+        width: 1.8rem;
+        right: 1.6rem;
+        top: 1.5rem;
+        stroke-width: 5px;
       }
 
       &-bar {
         flex: 1;
-        max-width: 912px;
-        height: 60px;
+        max-width: 91.2rem;
+        height: 5.5rem;
+        padding: 2rem;
+        border-radius: 5px;
+        border: #efefef 1px solid;
+        color: #000;
+
+        font-weight: bold;
       }
     }
 
     &__login {
       display: flex;
       align-items: center;
+      margin: 0 1.5rem 0 2rem;
 
-      & svg {
-        width: 30px;
-        fill: #52bf4d;
-        margin-right: 10px;
-      }
+      @include svg($color: #52bf4d, $margin: 0.8rem, $height: 2.3rem);
     }
 
     &__cart {
       display: flex;
       align-items: center;
       border: 1px solid #efefef;
-      padding: 10px 20px;
-      height: 63px;
+      padding: 0.2rem 1rem;
+      height: 5rem;
 
-      & svg {
-        width: 35px;
-        fill: #52bf4d;
-        margin-right: 8px;
-      }
+      @include svg($color: #52bf4d, $width: 3rem, $margin-right: 1rem);
     }
   }
 
-  & .header__nav-bar ul {
+  & .header__nav-bar-list {
     display: flex;
     background: #f2f2f2;
-    height: 64px;
+    height: 4.6rem;
     align-items: center;
-    padding: 0 126px;
+    padding: 3rem 0;
     justify-content: center;
-    font-size: 18px;
+    font-size: 1.6rem;
+    position: relative;
 
-    & li {
+    &-item {
       display: flex;
       align-items: center;
-      padding: 0 35px;
-      border-left: 1px solid #d6d6d6;
-      height: 64px;
-      color: #414141;
+      padding: 0 2rem;
+      border-left: 2px solid #d6d6d6;
+      height: 5.4rem;
+      color: $cinza-escuro;
 
       &:last-child {
         border-right: 1px solid #d6d6d6;
+      }
+
+      &:hover {
+        & .header__nav-bar-list-box-category {
+          display: flex;
+        }
+      }
+
+      & li {
+        border: 1px solid #d6d6d6;
+        padding: 5px 20px;
+        position: relative;
+      }
+
+      & a {
+        color: $cinza-escuro;
+      }
+    }
+
+    &-box-category {
+      position: absolute;
+      display: none;
+      flex-direction: column;
+      top: 5.8rem;
+      margin-left: -20px;
+      background-color: #f2f2f2;
+      white-space: nowrap;
+
+      &-item {
+        &:hover .header__nav-bar-list-box-category-box-category {
+          display: flex;
+        }
+      }
+
+      &-box-category {
+        position: absolute;
+        display: none;
+        flex-direction: column;
+        background-color: #f2f2f2;
+
+        left: 100%;
+        top: 0;
       }
     }
   }
