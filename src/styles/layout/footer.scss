@@ -1,0 +1,122 @@
+footer {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: #f9f9f9;
+
+  & .footer-logo {
+    display: flex;
+    flex-direction: row;
+    padding: 3.2rem 2rem;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #efefef;
+    border-bottom: 2px solid #efefef;
+
+    & img {
+      width: 25rem;
+    }
+  }
+
+  & .footer-container {
+    width: 80vw;
+  }
+
+  & .footer-info {
+    flex: 1;
+    padding: 30px 20px;
+    font-size: 1.6rem;
+    & h1 {
+      color: #52bf4d;
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    & h4 {
+      color: #000;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 45px;
+    }
+  }
+
+  & .footer-contact {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+    font-size: 1.5rem;
+    &-links {
+      &__list {
+        @include svg($width: 10px, $color: #8b8b8b, $margin-right: 10px);
+        margin-bottom: 10px;
+        white-space: nowrap;
+        align-items: center;
+        & li {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      &-title {
+        color: #52bf4d;
+        font-size: 20px;
+        font-weight: bolder;
+        line-height: 50px;
+      }
+
+      &-social {
+        @include svg(
+          $width: 40px,
+          $height: 40px,
+          $color: #000,
+          $margin-right: 10px
+        );
+      }
+
+      &-secure {
+        @include svg($width: 180px, $height: 50px, $color: #023680);
+      }
+    }
+
+    &-andrress {
+      max-width: 500px;
+    }
+  }
+
+  & .footer-copyright {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include svg($color: #52bf4d, $width: 150px, $margin: 30px 10px);
+
+    &-copyright {
+      background: #f2f2f2;
+      display: flex;
+      justify-content: space-between;
+      padding: 2rem 10rem;
+      font-size: 12px;
+
+      width: 100vw;
+
+      &-payments {
+        display: flex;
+
+        & img {
+          width: 40px;
+        }
+      }
+    }
+
+    &-logos {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  & .footer-links__list-item {
+    margin-right: 20px;
+  }
+}
