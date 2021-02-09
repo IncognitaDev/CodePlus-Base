@@ -4,13 +4,13 @@ const MiniCart = require('../modules/minicart')
 const Default = {
     init: function () {
         Default.menuInit()
-        MiniCart.init('.header__carrinho')
+        MiniCart.init({minicartClass: '.header__main__cart', OuterBox: true})
     },
 
     menuInit: () => {
         const menuConfig = {
             tree: 3,
-            mainClass: 'header__nav-bar-list'
+            mainClass: 'header__nav-bar-list',
         }
  
         menu.init(menuConfig);
